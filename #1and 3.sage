@@ -11,8 +11,11 @@ def check(points):
            if(p[1] != points[0][1]):
                 return False
         else:
-            if((p[1] - points[0][1])/(p[0] - points[0][0]) != d[0] / d[1]):
-                return False
+            if(p[0] - points[0][0] != 0):
+                if((p[1] - points[0][1])/(p[0] - points[0][0]) != d[1] / d[0]):
+                    return False
+            else:
+                 return False
     return True
 
 check([[1,0],[2,0],[3,0]])
